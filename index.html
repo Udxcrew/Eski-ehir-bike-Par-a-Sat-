@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BikeMarket Eskişehir</title>
+<meta name="theme-color" content="#090b0c">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#"><span class="logo">🚲</span><span>BIKEMARKET <small>ESKİŞEHİR</small></span></a>
+    <nav><a class="active" href="#ilanlar">İlanlar</a><a href="#magazalar">Mağazalar</a><a href="#nasil">Nasıl Çalışır?</a></nav>
+    <div class="actions"><button class="ghost" onclick="showFavs()">♡ Favoriler <b id="favCount"></b></button><button class="sell" onclick="alert('İlan verme sistemi sonraki sürümde geliyor 😎')">＋ İlan Ver</button></div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="glow"></div>
+ <div class="copy">
+  <div class="eyebrow">— ESKİŞEHİR'İN BİSİKLET PAZARI</div>
+  <h1>Bisikletini bul.<br><em>Pedala bas.</em></h1>
+  <p>Eskişehir'deki bisiklet, parça ve ekipmanları tek yerde keşfet.</p>
+  <div class="search"><span>⌕</span><input id="search" oninput="render()" placeholder="Maşa, kadro, Deore, jant..."><button onclick="render()">ARA</button></div>
+  <div class="meta">📍 Eskişehir　•　Güvenli alışveriş　•　Yerel satıcılar</div>
+ </div>
+ <div class="hero-art"><div class="orb"></div><div class="bike">🚵</div><div class="stat"><strong>1.240+</strong><small>aktif ilan</small></div></div>
+</section>
+
+<section class="categories" id="cats"></section>
+
+<section class="listings" id="ilanlar">
+ <div class="head"><div><small>BUGÜN ESKİŞEHİR'DE</small><h2>Öne çıkan ilanlar</h2></div><button onclick="setCat('Tümü')">Tüm ilanları gör →</button></div>
+ <div class="grid" id="grid"></div>
+</section>
+
+<section class="cta"><div><small>SATIŞA BAŞLA</small><h2>Kullanmadığın parçayı<br><em>nakde çevir.</em></h2><p>İlanını birkaç dakikada oluştur ve Eskişehir'deki bisikletçilere ulaş.</p></div><button class="sell" onclick="alert('İlan verme sistemi sonraki sürümde geliyor 😎')">＋ Ücretsiz ilan ver　→</button></section>
+</main>
+
+<footer><span>© 2026 BikeMarket Eskişehir</span><a href="#">by-r4liqnt</a><span>Eskişehir • Bisiklet • Topluluk</span></footer>
+<script src="app.js"></script>
+</body></html>
