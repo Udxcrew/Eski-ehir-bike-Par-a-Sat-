@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BikeMarket Eskişehir</title>
+<meta name="theme-color" content="#090b0c">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#"><span class="logo">🚲</span><span>BIKEMARKET <small>ESKİŞEHİR</small></span></a>
+    <nav><a class="active" href="#ilanlar">İlanlar</a><a href="#magazalar">Mağazalar</a><a href="#nasil">Nasıl Çalışır?</a></nav>
+    <div class="actions"><button class="ghost" onclick="showFavs()">♡ Favoriler <b id="favCount"></b></button><button class="ghost" onclick="openAuth()">Hesabım</button><button class="sell" onclick="openListing()">＋ İlan Ver</button></div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="glow"></div>
+ <div class="copy">
+  <div class="eyebrow">— ESKİŞEHİR'İN BİSİKLET PAZARI</div>
+  <h1>Bisikletini bul.<br><em>Pedala bas.</em></h1>
+  <p>Eskişehir'deki bisiklet, parça ve ekipmanları tek yerde keşfet.</p>
+  <div class="search"><span>⌕</span><input id="search" oninput="render()" placeholder="Maşa, kadro, Deore, jant..."><button onclick="render()">ARA</button></div>
+  <div class="meta">📍 Eskişehir　•　Güvenli alışveriş　•　Yerel satıcılar</div>
+ </div>
+ <div class="hero-art"><div class="orb"></div><div class="bike">🚵</div><div class="stat"><strong>1.240+</strong><small>aktif ilan</small></div></div>
+</section>
+
+<section class="categories" id="cats"></section>
+
+<section class="listings" id="ilanlar">
+ <div class="head"><div><small>BUGÜN ESKİŞEHİR'DE</small><h2>Öne çıkan ilanlar</h2></div><button onclick="setCat('Tümü')">Tüm ilanları gör →</button></div>
+ <div class="grid" id="grid"></div>
+</section>
+
+<section class="cta"><div><small>SATIŞA BAŞLA</small><h2>Kullanmadığın parçayı<br><em>nakde çevir.</em></h2><p>İlanını birkaç dakikada oluştur ve Eskişehir'deki bisikletçilere ulaş.</p></div><button class="sell" onclick="openListing()">＋ Ücretsiz ilan ver　→</button></section>
+</main>
+
+<footer><span>© 2026 BikeMarket Eskişehir</span><a href="#">by-r4liqnt</a><span>Eskişehir • Bisiklet • Topluluk</span></footer>
+<div class="modal" id="authModal">
+ <div class="modal-card">
+  <button class="close" onclick="closeModal('authModal')">×</button>
+  <div class="modal-kicker">BIKEMARKET HESABI</div>
+  <h2 id="authTitle">Hesap oluştur</h2>
+  <p class="modal-sub">İlanlarını yönetmek ve güvenli alışveriş yapmak için hesabını oluştur.</p>
+  <input class="field" id="authEmail" type="email" placeholder="E-posta adresin">
+  <input class="field" id="authPass" type="password" placeholder="Şifre">
+  <input class="field" id="authPass2" type="password" placeholder="Şifre tekrar">
+  <button class="modal-primary" onclick="fakeAuth()">Hesap oluştur</button>
+  <button class="switch" onclick="toggleAuth()">Zaten hesabın var mı? Giriş yap</button>
+ </div>
+</div>
+
+<div class="modal" id="listingModal">
+ <div class="modal-card listing-card">
+  <button class="close" onclick="closeModal('listingModal')">×</button>
+  <div class="modal-kicker">YENİ İLAN</div>
+  <h2>Parçanı satışa çıkar</h2>
+  <p class="modal-sub">Şimdilik taslak olarak hazırlanır. Gerçek hesap ve ödeme sistemi backend aşamasında bağlanacak.</p>
+  <input class="field" placeholder="İlan başlığı — ör. Shimano Deore aktarıcı">
+  <div class="two"><select class="field"><option>Kategori seç</option><option>Kadro</option><option>Maşa</option><option>Vites</option><option>Jant</option><option>Fren</option></select><input class="field" type="number" placeholder="Fiyat (TL)"></div>
+  <div class="two"><select class="field"><option>İlçe seç</option><option>Tepebaşı</option><option>Odunpazarı</option></select><select class="field"><option>Durum</option><option>Yeni</option><option>İyi</option><option>Kullanılmış</option></select></div>
+  <textarea class="field area" placeholder="Ürün açıklaması"></textarea>
+  <label class="upload">＋ Fotoğraf ekle <input type="file" accept="image/*" multiple hidden></label>
+  <button class="modal-primary" onclick="submitListing()">İlanı devam ettir →</button>
+ </div>
+</div>
+<script src="app.js"></script>
+</body></html>
